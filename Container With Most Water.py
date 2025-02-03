@@ -4,12 +4,18 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
+        left = 0
+        right = len(height) - 1
         maximum = 0
-        for i in range(len(height)):
-            for j in range(i+1, len(height)):
-                width = j - i  
-                tempheight = min(height[i], height[j])
-                if (width*tempheight)> maximum:
-                    maximum = width*tempheight
-        
-        return maximum
+
+        while(left < right):
+            width = right - left
+            tempheight = min(height[left], height[right])
+            maximum = max(maximum, width * tempheight)
+
+            if(height[left] < height[right]):
+                left += 1
+            else:
+                right = right-1
+
+        return(maximum)
