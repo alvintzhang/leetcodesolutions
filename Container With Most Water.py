@@ -4,6 +4,9 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
+
+        #this solution works but is inefficient; LeetCode does not accept this submission
+        
         left = 0
         right = len(height) - 1
         maximum = 0
