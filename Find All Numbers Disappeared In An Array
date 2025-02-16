@@ -1,0 +1,16 @@
+class Solution(object):
+    def findDisappearedNumbers(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        
+        lst = []
+        nums.sort()
+        length = len(nums)
+        n = set(nums)
+        j = 0
+        for i in range(1,len(nums)+1):
+            if i not in n:
+                lst.append(i)
+        return lst
